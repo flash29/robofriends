@@ -1,0 +1,8 @@
+{
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.colorCustomizations": {
+        "terminal.foreground" : "#07f1bf",
+        "terminal.background" : "#1d1c1c",
+        
+    }
+}
