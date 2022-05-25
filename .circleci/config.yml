@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 orbs:
   node: circleci/node@4.7.0
 jobs:
@@ -14,10 +14,10 @@ jobs:
     steps:
       - checkout
       - run: echo "check from second build"
-  workflows:
-    version: 2.1
-    bobby_sally: 
-      jobs: 
-        - bobby
-        - sally
+workflows:
+  version: 2
+  bobby_sally: 
+    jobs: 
+      - bobby
+      - sally
       
