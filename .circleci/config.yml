@@ -2,13 +2,22 @@ version: 2.1
 orbs:
   node: circleci/node@4.7.0
 jobs:
-  build:
-    executor:
-      name: node/default
-      tag: '10.4'
+  bobby:
+    docker:
+      - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-      - run: npm run test
+      - run: echo "check from first ever build"
+  sally:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "check from second build"
+  workflows:
+    version: 2.1
+    bobby_sally: 
+      jobs: 
+        - bobby
+        - sally
+      
